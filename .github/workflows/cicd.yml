@@ -13,13 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Uncomment and configure if Docker setup is needed
-      # - name: Set up Docker
-      #   run: |
-      #     sudo apt-get update
-      #     sudo apt-get install -y docker.io
-      #     sudo systemctl start docker
-      #     sudo systemctl enable docker
+
 
       - name: Run Docker version
         run: docker --version
