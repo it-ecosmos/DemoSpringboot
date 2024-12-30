@@ -31,7 +31,7 @@ services:
       SPRING_DATASOURCE_USERNAME: ${SPRING_DATASOURCE_USERNAME}
       SPRING_DATASOURCE_PASSWORD: ${SPRING_DATASOURCE_PASSWORD}
     depends_on:
-      - postgres-db # Ensure PostgreSQL is up before starting Spring Boot
+      - postgres-db-demosb # Ensure PostgreSQL is up before starting Spring Boot
     networks:
       - drkare_test_network
 
