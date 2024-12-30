@@ -16,11 +16,11 @@ jobs:
 
 
 
-      - name: Run Docker version
-        run: docker --version
+      # - name: Run Docker version
+      #   run: docker --version
 
-      - name: Run Docker Compose version
-        run: docker compose --version
+      # - name: Run Docker Compose version
+      #   run: docker compose --version
 
       - name: Install Docker Compose
         run: |
