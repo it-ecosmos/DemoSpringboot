@@ -70,4 +70,4 @@ jobs:
         run: docker compose up --build -d
 
       - name: Check logs for Spring Boot container
-        run: docker compose logs springboot-app
+        run: docker compose logs springboot-app-demosb
