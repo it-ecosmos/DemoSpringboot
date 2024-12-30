@@ -53,7 +53,7 @@ jobs:
       #   run: sleep 30
 
       - name: Copy .env_sample to .env
-        run: cp ./.env_sample /home/nikhil/Documents/DrKare/actions-runner-demodrkare/_work/DemoSpringboot/DemoSpringboot/.env 
+        run: cp ./.env_sample /home/test_env/actions-runner-demodrkare/_work/DemoSpringboot/DemoSpringboot/.env 
       
       - name: Build Docker containers
         run: docker compose up --build -d
