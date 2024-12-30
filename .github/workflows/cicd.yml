@@ -30,8 +30,8 @@ jobs:
       - name: Copy .env_sample to .env
         run: cp ./.env_sample ./.env
 
-      - name: Down Docker container
-        run:  docker-compose down
+      # - name: Down Docker container
+      #   run:  docker-compose down
 
       - name: Build Docker containers
         run:  docker-compose up --build -d
@@ -51,7 +51,18 @@ jobs:
 
       # - name: Wait for containers to initialize (optional)
       #   run: sleep 30
-
+      
+      - name: Delete old Docker container and image
+        run: |
+            CONTAINER_NAME="postgres-db-demosb"
+            IMAGE_NAME="postgres:latest" 
+            CONTAINER_NAME1="springboot-app-demosb"
+            IMAGE_NAME1="demospringboot-springboot-app" 
+            echo "${{ secrets.PASSWORD }}" | sudo -S docker rm -f $CONTAINER_NAME || true
+            echo "${{ secrets.PASSWORD }}" | sudo -S docker rmi -f $IMAGE_NAME || true
+            echo "${{ secrets.PASSWORD }}" | sudo -S docker rm -f $CONTAINER_NAME1 || true
+            echo "${{ secrets.PASSWORD }}" | sudo -S docker rmi -f $IMAGE_NAME1 || true
+     
       - name: Copy .env_sample to .env
         run: cp ./.env_sample /home/test_env/actions-runner-demodrkare/_work/DemoSpringboot/DemoSpringboot/.env 
       
