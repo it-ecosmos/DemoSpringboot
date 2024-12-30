@@ -1,8 +1,8 @@
 services:
   # PostgreSQL Database Service
-  postgres-db:
+  postgres-db-demosb:
     image: postgres:latest
-    container_name: postgres-db
+    container_name: postgres-db-demosb
     env_file:
       - .env
     environment:
@@ -17,11 +17,11 @@ services:
       - drkare_test_network
 
   # Spring Boot Application Service
-  springboot-app:
+  springboot-app-demosb:
     build:
       context: . # Use the current directory for Docker build context
       dockerfile: Dockerfile # Ensure this points to your Dockerfile
-    container_name: springboot-app
+    container_name: springboot-app-demosb
     ports:
       - "3001:80" # Expose Spring Boot app port
     env_file:
