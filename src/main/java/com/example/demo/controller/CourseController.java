@@ -41,5 +41,4 @@ public class CourseController {
         return "Course deleted successfully!";
     }
     
-    
 }
